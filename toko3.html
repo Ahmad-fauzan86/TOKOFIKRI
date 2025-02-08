@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Halaman Beli Barang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF; /* Biru */
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .submit-btn {
+            background-color: #007BFF; /* Biru */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Halaman Pembelian</h1>
+        
+        <form action="/submit-pembelian" method="POST">
+            
+            <!-- Alamat -->
+            <div class="form-section">
+                <label for="alamat">Alamat Pengiriman</label>
+                <input type="text" id="alamat" name="alamat" required placeholder="Masukkan alamat pengiriman">
+            </div>
+
+            <!-- Jumlah Barang -->
+            <div class="form-section">
+                <label for="jumlah">Jumlah Barang</label>
+                <input type="number" id="jumlah" name="jumlah" required placeholder="Masukkan jumlah barang" min="1">
+            </div>
+
+            <!-- Metode Pembayaran -->
+            <div class="form-section">
+                <label for="metodePembayaran">Pilih Metode Pembayaran</label>
+                <select id="metodePembayaran" name="metodePembayaran" required>
+                    <option value="transfer">Transfer Bank</option>
+                    <option value="cod">Bayar di Tempat (COD)</option>
+                    <option value="gopay">GoPay</option>
+                </select>
+            </div>
+
+            <!-- Tombol Submit -->
+            <button type="submit" class="submit-btn">Konfirmasi Pembelian</button>
+        </form>
+    </div>
+
+</body>
+</html>
